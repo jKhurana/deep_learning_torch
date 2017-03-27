@@ -1,0 +1,7 @@
+--------------------------------------------- Sequence_2_Sequence_Data_Creation--------------------------------------------
+
+
+1. Put the training file in data directory with name "train"
+2. Seperate the input and output sequence with "\t".
+3. Run the seq_2_seq_data.lua with the following command
+		lua seq_2_seq_data.lua
