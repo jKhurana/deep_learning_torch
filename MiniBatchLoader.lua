@@ -2,24 +2,25 @@ local MinibatchLoader = {}
 MinibatchLoader.__index = MinibatchLoader
 
 function MinibatchLoader.create(opt, name)
-	local  trainingData = {}
-  	setmetatable(trainingData, MinibatchLoader)
+	local  self = {}
+  	setmetatable(self, MinibatchLoader)
 
   	-- load the training data
-	trainingData = torch.load(path.join(opt.data_dir,'train.t7'))
+	self.trainingData = torch.load(path.join(opt.data_dir,'train.t7'))
 
 	-- prepare data as per requirement
 
+	return self
 
 end
 
 function MinibatchLoader:sample()
-  local p = math.random(#trainingData.data)
-  return trainingData.data[p], trainingData.label[p]
+  local p = math.random(#(self.trainingData.data))
+  return self.trainingData.data[p], self.trainingData.label[p]
 end
 
 function MinibatchLoader:getDataSize()
-	return #trainingData.data
+	return #(self.trainingData.data)
 end
 
 

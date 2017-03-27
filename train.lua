@@ -42,7 +42,7 @@ end
 
 ----------------------------- training funciton----------------------------------
 
-function train(m,f)
+function train(f)
 	print '==> defining training procedure'
 	--set the optimizer state
 	setOptimizerState(opt)
